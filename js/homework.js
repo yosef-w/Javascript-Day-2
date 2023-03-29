@@ -24,12 +24,23 @@ console.log(toCelcius(32))
     Create an instance of the new user and then change their password using the method.
 */
 
+class User{
+    constructor(username, password){
+        this.username = username;
+        this.password = password
+    }
 
+    changePassword(oldPassword, newPassword){
+        if (oldPassword === this.password){
+            this.password = newPassword
+        }
+    }
+}
 
-// let user1 = new User('brians', 'abc123');
-// user1.changePassword('abc123', '123abc'); // Sets the user's password to 123abc
-
-
+let user1 = new User('brians', 'abc123');
+console.log(user1)
+user1.changePassword('abc123', '123abc');
+console.log(user1)
 
 
 
@@ -48,7 +59,8 @@ function squareNegatives(arr){
     arr.forEach(function(num){
         if(num < 0){
             output.push(num*num)
+        }
     })
     return output
 }
-squareNegatives([-10, -3, 4, -2, 8, 9, -3])
+console.log(squareNegatives([-10, -3, 4, -2, 8, 9, -3]))
